@@ -1,0 +1,19 @@
+{
+  "name": "slcmshop",
+  "description": "Testing Azure and JWT",
+  "version": "0.0.1",
+  "private": false,
+  "license": "ISC",
+  "author": "jocke",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "node-fetch": "^2.6.1"
+  }
+}
