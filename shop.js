@@ -18,7 +18,7 @@ router.post('/', authToken, (req, res) => {
     let date, deliveryStatus
 
 
-    fetch(`${process.env.DBIP}${process.env.DBPORT}/store`, {
+    fetch(`${process.env.DBIP}/store`, {
         method: 'post',
         body:    JSON.stringify(req.body),
         headers: { 'Content-Type': 'application/json' },
@@ -44,7 +44,7 @@ router.post('/', authToken, (req, res) => {
 
 function getOrderNumber(res, body, date, deliveryStatus) {
 
-    fetch(`${process.env.DBIP}${process.env.DBPORT}/orders`, {
+    fetch(`${process.env.DBIP}/orders`, {
         method: 'post',
         body:    JSON.stringify(body),
         headers: { 'Content-Type': 'application/json' },
