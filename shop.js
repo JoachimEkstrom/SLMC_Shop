@@ -44,12 +44,11 @@ router.post('/', authToken, (req, res) => {
 
 router.post('/deliver', authToken, (req, res) => {
 
-    console.log(req.body.orderNr)
-    let orderNr = req.body.orderNr
+    console.log(req.body)
 
     fetch(`${process.env.EMAIL}`, {
         method: 'post',
-        body:    JSON.stringify(orderNr),
+        body:    JSON.stringify(req.body),
         headers: { 'Content-Type': 'application/json' },
     })
     .then(resf => resf.json())
