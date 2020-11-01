@@ -42,6 +42,26 @@ router.post('/', authToken, (req, res) => {
     
 })
 
+router.post('/deliver', authToken, (req, res) => {
+
+    console.log(req.body.orderNr)
+    let orderNr = req.body.orderNr
+
+    fetch(`${process.env.EMAIL}`, {
+        method: 'post',
+        body:    JSON.stringify(orderNr),
+        headers: { 'Content-Type': 'application/json' },
+    })
+    .then(resf => resf.json())
+    .then(json => {
+        console.log(json)
+        res.send(json)
+        
+    })
+    
+})
+
+
 function getOrderNumber(res, body, date, deliveryStatus) {
 
     fetch(`${process.env.DBIP}/orders`, {
